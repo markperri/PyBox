@@ -35,7 +35,7 @@
 import collections
 import pdb
 import re
-import pybel # Needed for calculating olecular properties in aerosol model [Parse_eqn_file used for both gas and aerosol]
+from openbabel import pybel # Needed for calculating olecular properties in aerosol model [Parse_eqn_file used for both gas and aerosol]
 import numpy as np
 import datetime
 from scipy.sparse import lil_matrix

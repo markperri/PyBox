@@ -27,7 +27,7 @@
 
 import sys
 import numpy 
-sys.path.append('/Users/davidtopping/Code/Git_repos/UManSysProp_public/')
+
 from umansysprop import boiling_points
 from umansysprop import vapour_pressures
 from umansysprop import critical_properties
@@ -111,6 +111,10 @@ def Pure_component1(num_species,species_dict,species_dict2array,Pybel_object_dic
             # Calculate a boiling point with Nanoolal for density methods
             #pdb.set_trace()
             b1 = boiling_points.nannoolal(Pybel_object_dict[SMILES_dict[compound]])
+
+            #b1 = boiling_points.joback_and_reid(Pybel_object_dict[SMILES_dict[compound]])
+            #print (b1)
+
             y_density_array[species_dict2array[compound]]=liquid_density(Pybel_object_dict[SMILES_dict[compound]], temp, critical_property(Pybel_object_dict[SMILES_dict[compound]], b1))*1.0E3
             
             #y_density_array[species_dict2array[compound]]=(liquid_densities.girolami(Pybel_object_dict[SMILES_dict[compound]])*1.0E3) #Convert from g/cc to kg/m3
